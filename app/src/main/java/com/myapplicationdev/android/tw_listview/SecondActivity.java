@@ -22,14 +22,14 @@ public class SecondActivity extends AppCompatActivity {
         ListView lv;
         ArrayAdapter aa;
         final ArrayList<Modules> modules;
-
+        TextView tvYear;
 
         lv = (ListView) this.findViewById(R.id.lvModules);
-
+        tvYear = (TextView)this.findViewById(R.id.tvYear);
 
         Intent i = getIntent();
         String year = i.getStringExtra("year");
-
+        tvYear.setText(year);
 
         modules = new ArrayList<Modules>();
         modules.add(new Modules("C105", true));
