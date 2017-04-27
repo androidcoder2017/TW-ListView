@@ -22,6 +22,7 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        lv = (ListView)findViewById(R.id.lvYear);
 
         al = new ArrayList<String>();
         al.add("Year 1");

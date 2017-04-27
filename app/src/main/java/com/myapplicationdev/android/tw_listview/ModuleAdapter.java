@@ -15,8 +15,8 @@ public class ModuleAdapter extends ArrayAdapter<Modules> {
 
     private ArrayList<Modules> modules;
     private Context context;
-    private TextView tvModulesCode;
-    private ImageView ivProg;
+    private TextView tvModulesCodes;
+    private ImageView ivProgramming;
 
     public ModuleAdapter(Context context, int resource, ArrayList<Modules> objects) {
         super(context, resource, objects);
@@ -27,18 +27,19 @@ public class ModuleAdapter extends ArrayAdapter<Modules> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.activity_second, parent,false);
+        View rowView = inflater.inflate(R.layout.row, parent,false);
 
-        ivProg = (ImageView)rowView.findViewById(R.id.ivProg);
-        tvModulesCode = (TextView)rowView.findViewById(R.id.tvModulesCode);
+        ivProgramming = (ImageView)rowView.findViewById(R.id.ivProg);
+        tvModulesCodes = (TextView)rowView.findViewById(R.id.tvModulesCode);
 
         Modules currentModules = modules.get(position);
 
-        tvModulesCode.setText(currentModules.getModulesCode());
+        tvModulesCodes.setText(currentModules.getModulesCode());
+
         if(currentModules.isProg()) {
-            ivProg.setImageResource(R.drawable.prog);
+            ivProgramming.setImageResource(R.drawable.prog);
         } else  {
-            ivProg.setImageResource(R.drawable.nonprog);
+            ivProgramming.setImageResource(R.drawable.nonprog);
         }
         return rowView;
     }
